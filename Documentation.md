@@ -21,8 +21,10 @@ $config['columns'] = "id,usersId,ipAddress,type,createdAt";
 // for array
 $config['columns'] = ["id","usersId","ipAddress","type","createdAt"];
 ```
-
+---
 `'s_columns'` [array|string]  - columns access. If no 's_columns' in config, filters off. Filters info: [bootstrap-table select2 filter](https://bootstrap-table.com/docs/extensions/select2-filter/)
+
+Used to create a query by type "column1 LIKE :bind_param1: AND column2 LIKE :bind_param2:", which allows the use of % and _ in the query
 
 ```php
 // for string
@@ -30,7 +32,7 @@ $config['s_columns'] = "ipAddress,type";
 // for array
 $config['s_columns'] = ["ipAddress","type"];
 ```
-
+---
 `'search_column'` [string]  - column for search ('%'.value.'%').
 If no 'search_column' in config, search off.
 ([link](https://bootstrap-table.com/docs/api/table-options/#search))
@@ -38,7 +40,7 @@ If no 'search_column' in config, search off.
 ```php
 $config['search_column'] = "ipAddress";
 ```
-
+---
 `'conditions'` [array]  - conditions (Can't be used without 'bind').
 
 `'bind'` [array]  - bind values for conditions (Can not be used without 'conditions')
@@ -47,13 +49,13 @@ $config['search_column'] = "ipAddress";
 $config['conditions'] = ['usersId = :user_id:'];
 $config['bind']       = ['user_id' => $user->id];
 ```
-
+---
 `'data'` [array]  - request for bootstrap table (required)
 
 ```php
 $config['data'] = $this->request->getPost();
 ```
-
+---
 `'max_rows'` [array]  - maximum rows of query (limit). 
 To protect against receiving large amounts of data from the database on the server side.
 
