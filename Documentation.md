@@ -11,7 +11,7 @@ $creator $creator = new MySqlCreater($model, $configuration)
 
 `$configuration` - configuration array
 
-###configuration array
+### configuration array
 
 `'columns'` [array|string]  - columns access (required)
 
@@ -63,7 +63,7 @@ To protect against receiving large amounts of data from the database on the serv
 $config['max_rows'] = 1000;
 ```
 
-###Simple
+### Simple
 **php**
 ```php
 $model   = new ResetPasswords();
